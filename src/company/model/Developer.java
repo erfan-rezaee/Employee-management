@@ -19,7 +19,7 @@ public class Developer extends Employee {
 
     public void writeCode(){
 
-        System.out.println(super.getName() + " is writing Java code.");
+        System.out.println(getName() + " is writing " + programmingLanguage);
     }
 
 

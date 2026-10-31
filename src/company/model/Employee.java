@@ -1,7 +1,5 @@
 package company.model;
 
-import javax.print.attribute.standard.MediaName;
-
 public class Employee {
 
     private final String employeeId;
@@ -40,6 +38,10 @@ public class Employee {
     }
 
     public void increaseSalary(double percentage){
+
+        if (!Double.isFinite(percentage) || percentage <= 0){
+            throw new IllegalArgumentException("Invalid percentage!");
+        }
 
         double newBaseSalary = baseSalary + (baseSalary * percentage/100);
 
