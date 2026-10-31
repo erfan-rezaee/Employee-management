@@ -22,5 +22,27 @@ public class Developer extends Employee {
         System.out.println(getName() + " is writing " + programmingLanguage);
     }
 
+    @Override
+    public double calculateSalary() {
+
+        double baseSalary = super.calculateSalary();
+
+        double finalSalary = baseSalary * 1.20;
+
+        if (!Double.isFinite(finalSalary)) {
+            throw new IllegalArgumentException("Invalid final salary!");
+        }
+
+        return finalSalary;
+    }
+
+    @Override
+    public void showInfo(){
+
+        super.showInfo();
+
+        System.out.println("Programming language: " + programmingLanguage);
+    }
+
 
 }

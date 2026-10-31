@@ -51,6 +51,10 @@ public class Employee {
         baseSalary = newBaseSalary;
     }
 
+    public double calculateSalary() {
+        return baseSalary;
+    }
+
     public void showInfo(){
 
         System.out.println("EmployeeId: " + employeeId);
@@ -58,4 +62,12 @@ public class Employee {
         System.out.printf("BaseSalary: %.1f%n", baseSalary);
     }
 
+    @Override
+    public String toString() {
+
+            return String.format(
+                    "Employee{id='%s', name='%s', salary=%.1f}",
+                    getEmployeeId(), getName(), getBaseSalary()
+            );
+    }
 }

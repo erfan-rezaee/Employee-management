@@ -26,4 +26,23 @@ public class Manager extends Employee {
         System.out.println(super.getName() + " is managing a team of " + teamSize + " people." );
     }
 
+    @Override
+    public double calculateSalary() {
+
+        double baseSalary = super.calculateSalary();
+        double finalSalary = baseSalary + (baseSalary * teamSize * 0.02);
+
+        if (!Double.isFinite(finalSalary)){
+            throw new IllegalArgumentException("Invalid finalSalary!");
+        }
+
+        return finalSalary;
+    }
+
+    @Override
+    public void showInfo() {
+        super.showInfo();
+
+        System.out.println("TeamSize: " + teamSize);
+    }
 }
